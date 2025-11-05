@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classroom Check-In</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f4; }
+        h2 { color: #333; }
+        .container { display: flex; gap: 50px; }
+        .section { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 45%; }
+        input, button { padding: 10px; margin-top: 10px; width: 100%; }
+        ul { list-style-type: none; padding: 0; }
+        li { padding: 5px 0; border-bottom: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Classroom Check-In System</h1>
+    <div class="container">
+        <!-- Guest Check-In Section -->
+        <div class="section">
+            <h2>Guest Check-In</h2>
+            <form id="guestForm">
+                <input type="text" id="guestName" placeholder="Your Name" required>
+                <input type="text" id="guestPurpose" placeholder="Purpose of Visit" required>
+                <button type="submit">Check In</button>
+            </form>
+            <p id="guestMessage" style="color: green;"></p>
+        </div>
+
+        <!-- Employee View Section -->
+        <div class="section">
+            <h2>Employee Check-In List</h2>
+            <ul id="checkInList"></ul>
+        </div>
+    </div>
+
+    <script>
+        const guestForm = document.getElementById('guestForm');
+        const guestMessage = document.getElementById('guestMessage');
+        const checkInList = document.getElementById('checkInList');
+
+        guestForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('guestName').value.trim();
+            const purpose = document.getElementById('guestPurpose').value.trim();
+            if (name && purpose) {
+                const time = new Date().toLocaleTimeString();
+                const listItem = document.createElement('li');
+                listItem.textContent = `${name} - ${purpose} at ${time}`;
+                checkInList.appendChild(listItem);
+                guestMessage.textContent = "Thank you for checking in!";
+                guestForm.reset();
+            }
+        });
+    </script>
+</body>
+</html>

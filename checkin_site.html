@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guest Check-In</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="time"] {
+            padding: 8px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 8px 12px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            background-color: #fff;
+            margin-bottom: 5px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guest Check-In</h1>
+    <form id="checkinForm">
+        <input type="text" id="guestName" placeholder="Guest Name" required>
+        <input type="time" id="checkinTime" required>
+        <button type="submit">Check In</button>
+    </form>
+    <h2>Checked-In Guests</h2>
+    <ul id="guestList"></ul>
+
+    <script>
+        const form = document.getElementById('checkinForm');
+        const guestList = document.getElementById('guestList');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('guestName').value;
+            const time = document.getElementById('checkinTime').value;
+
+            const listItem = document.createElement('li');
+            listItem.textContent = `${name} checked in at ${time}`;
+            guestList.appendChild(listItem);
+
+            form.reset();
+        });
+    </script>
+</body>
+</html>
