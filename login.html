@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Login – Grand Vista</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="gv-header">
+    <img src="GV-logo.png" alt="Grand Vista Hotel logo" class="gv-logo" />
+    <h1>Grand Vista Hotel</h1>
+  </header>
+
+  <main class="login-container">
+    <h2>Employee Login</h2>
+    <input type="text" placeholder="Employee ID" />
+    <select>
+      <option>Front Desk</option>
+      <option>Housekeeping</option>
+      <option>Manager</option>
+    </select>
+    <button onclick="simulateLogin()">Login</button>
+  </main>
+
+  <script>
+    function simulateLogin() {
+      alert("Login successful. Redirecting to dashboard...");
+      window.location.href = "dashboard.html";
+    }
+  </script>
+</body>
+</html>

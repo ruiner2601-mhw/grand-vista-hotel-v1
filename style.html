@@ -1,0 +1,77 @@
+:root {
+  --primary: black;
+  --secondary: white;
+  --accent: gold;
+}
+
+body {
+  margin: 0;
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-family: 'Georgia', serif;
+}
+
+.gv-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  padding: 1rem;
+  border-bottom: 2px solid var(--accent);
+}
+
+.gv-logo {
+  height: 60px;
+  margin-right: 1rem;
+}
+
+h1, h2 {
+  color: var(--secondary);
+  text-align: center;
+}
+
+.home-links {
+  text-align: center;
+  padding: 2rem;
+}
+
+.home-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.home-links li {
+  margin: 1rem 0;
+}
+
+.home-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.login-container {
+  max-width: 300px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 2px solid var(--accent);
+  text-align: center;
+}
+
+input, select, button {
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--accent);
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+button {
+  background-color: var(--accent);
+  color: var(--primary);
+  font-weight: bold;
+  cursor: pointer;
+}
